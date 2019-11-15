@@ -7,6 +7,9 @@
     <title>Inicio | </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <!-- favicon
         ============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
@@ -65,10 +68,11 @@
                 </div>
                 <div class="left-custom-menu-adp-wrap">
                     <ul class="nav navbar-nav left-sidebar-menu-pro">
-                        <li class="nav-item"><a href="user_profile.html" class="nav-link"><i class="fa fa-user"></i>&nbsp;Perfil</a>
+                        <li class="nav-item"><a href="user_profile.html" class="nav-link"><i
+                                    class="fa fa-user"></i>&nbsp;Perfil</a>
                         </li>
                         <li class="nav-item"><a href="denuncia_profile.html" class="nav-link"><i
-                                    class="fa fa-exclamation-triangle"></i>&nbsp;Denuncias</a></li>
+                                    class="fa fa-exclamation-triangle"></i>&nbsp;Quejas</a></li>
                         <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-sign-out"></i>&nbsp;Cerrar
                                 Sesión</a>
                         </li>
@@ -79,17 +83,18 @@
         <!-- Header top area end-->
 
         <!-- Mobile Menu start -->
-        <div class="mobile-menu-area" style="background: #fff;">
+        <div class="mobile-menu-area" style="background: #424141;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="mobile-menu">
                             <nav id="dropdown">
                                 <ul class="mobile-menu-nav">
-                                        <li class="nav-item"><a href="user_profile.html" class="nav-link"><i class="fa fa-user"></i>&nbsp;Perfil</a>
-                                        </li>
-                                        <li class="nav-item"><a href="denuncia_profile.html" class="nav-link"><i
-                                                    class="fa fa-exclamation-triangle"></i>&nbsp;Denuncias</a></li>
+                                    <li class="nav-item"><a href="user_profile.html" class="nav-link"><i
+                                                class="fa fa-user"></i>&nbsp;Perfil</a>
+                                    </li>
+                                    <li class="nav-item"><a href="denuncia_profile.html" class="nav-link"><i
+                                                class="fa fa-exclamation-triangle"></i>&nbsp;Quejas</a></li>
                                     <li class="nav-item"><a href="#" class="nav-link"><i
                                                 class="fa fa-sign-out"></i>&nbsp;Cerrar Sesión</a></i>
                                     </li>
@@ -105,63 +110,84 @@
         <div class="content-inner-all">
             <div class="login-form-area">
                 <div class="container-fluid">
-                    <div class="row mg-t-30 mg-b-40">
+                    <div class=" mg-t-30 mg-b-40">
                         <div class="col-lg-1"></div>
                         <form id="">
                             <div class="col-lg-10">
                                 <div class="login-bg">
                                     <div class="contact-client-img contact-img-v2">
-                                        <h1><a class="contact-client-name" href="#">DENUNCIAS</a></h1>
-                                        <button type="button" onclick="clearModalInputs()" class="btn btn-custon-four btn-primary"
-                                            data-toggle="modal" data-target="#modaladd"><i
-                                                class="fa fa-plus-circle"></i>&nbsp;Agregar denuncia</button>
+                                        <h1><a class="contact-client-name" href="#">QUEJAS</a></h1>
+
                                     </div>
-                                    <div class="sparkline10-graph">
-                                        <div class="static-table-list">
-                                            <table class="table border-table text-center">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center">Denuncia</th>
-                                                        <th class="text-center">Fecha</th>
-                                                        <th class="text-center">Hora</th>
-                                                        <th class="text-center">Comprobar</th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Denuncia 1</td>
-                                                        <td>07/11/19</td>
-                                                        <td>Hora</td>
-                                                        <td class="text-center" style="cursor: pointer;"><i class="fa fa-check"></i></td>
-                                                        <th data-toggle="modal" data-target="#modal" style="cursor: pointer;"><i
-                                                                class="fa fa-info-circle"></i>&nbsp;Ver más</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Denuncia 2</td>
-                                                        <td>07/11/19</td>
-                                                        <td>Hora</td>
-                                                        <td class="text-center" style="cursor: pointer;"><i class="fa fa-check"></i></td>
-                                                        <th data-toggle="modal" data-target="#modal" style="cursor: pointer;"><i
-                                                                class="fa fa-info-circle"></i>&nbsp;Ver más</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Denuncia 3</td>
-                                                        <td>07/11/19</td>
-                                                        <td>Hora</td>
-                                                        <td class="text-center" style="cursor: pointer;"><i class="fa fa-check"></i></td>
-                                                        <th data-toggle="modal" data-target="#modal" style="cursor: pointer;"><i
-                                                                class="fa fa-info-circle" ></i>&nbsp;Ver más</th>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                    <div class="text-right mb-3">
+                                        <button type="button" onclick="clearModalInputs()"
+                                            class="btn btn-custon-four btn-primary" data-toggle="modal"
+                                            data-target="#modaladd"><i class="fa fa-plus-circle"></i>&nbsp;Agregar
+                                            queja</button>
+                                    </div>
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="card" style="box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);">
+                                                    <div class="card-header text-muted">Fecha y hora</div>
+                                                    <div class="card-body">
+                                                        <div class="row no-gutters">
+                                                            <div class="col-md-4">
+                                                                <a href="#" onclick="getDocId('${doc.id}')">
+                                                                    <img src="${doc.data().profilePicURL}"
+                                                                        class="card-img"
+                                                                        style="margin-top: 5%; margin-left: 15%; border-radius: 50%; width: 70%; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);"></img>
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="card-body">
+                                                                    <a href="#" onclick="getDocId('${doc.id}')">
+                                                                        <h4 class="card-title">
+                                                                            ${doc.data().tipodeQueja}</h4>
+                                                                    </a>
+                                                                    <p class="card-text">Descripción:</p>
+                                                                    <button type="button" onclick="clearModalInputs1()"
+                                                                        class="btn btn-custon-four btn-link pull-right"
+                                                                        data-toggle="modal" data-target="#modal"><i
+                                                                            class="fa fa-info-circle"></i>&nbsp;Ver más</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="card" style="box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);">
+                                                    <div class="card-header text-muted">Fecha y hora</div>
+                                                    <div class="card-body">
+                                                        <div class="row no-gutters">
+                                                            <div class="col-md-4">
+                                                                <a href="#" onclick="getDocId('${doc.id}')">
+                                                                    <img src="${doc.data().profilePicURL}"
+                                                                        class="card-img"
+                                                                        style="margin-top: 5%; margin-left: 15%; border-radius: 50%; width: 70%; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);"></img>
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="card-body">
+                                                                    <a href="#" onclick="getDocId('${doc.id}')">
+                                                                        <h4 class="card-title">
+                                                                            ${doc.data().tipodeQueja}</h4>
+                                                                    </a>
+                                                                    <p class="card-text">Descripción:</p>
+
+                                                                    <button type="button" onclick="clearModalInputs1()"
+                                                                        class="btn btn-custon-four btn-link pull-right"
+                                                                        data-toggle="modal" data-target="#modal"><i
+                                                                            class="fa fa-info-circle"></i>&nbsp;Ver más</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
-                                    </div>
-                                    <br><br>
-
-                                </div>
-
-                            </div>
                         </form>
 
                         <div class="col-lg-4"></div>
@@ -175,17 +201,15 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                        <h4 class="modal-title" id="exampleModalLongTitle">REPORTE</h4>
                         
+                        <h4 class="modal-title" id="exampleModalLongTitle">REPORTE</h4>
+
                     </div>
                     <div class="modal-body">
                         <div class="form-group-inner">
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <label class="login2 pull-right pull-right-pro">Tipo de reporte</label>
+                                    <label class="login2 pull-left pull-left-pro">Tipo de reporte</label>
                                 </div>
                                 <div class="col-lg-9">
                                     <div class="form-select-list">
@@ -197,7 +221,7 @@
                         <div class="form-group-inner">
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <label class="login2 pull-right pull-right-pro">Lugar</label>
+                                    <label class="login2 pull-left pull-left-pro">Lugar</label>
                                 </div>
                                 <div class="col-lg-9">
                                     <input type="text" class="form-control" disabled />
@@ -205,29 +229,29 @@
                             </div>
                         </div>
                         <div class="form-group-inner">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <label class="login2 pull-right pull-right-pro">Descripción</label>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <textarea class="form-control" disabled> 
-                                            
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="login2 pull-left pull-left-pro">Descripción</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <textarea class="form-control" disabled>
+
                                         </textarea>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group-inner">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <label class="login2 pull-right pull-right-pro">Imagen</label>
-                                        </div>
-                                        <div class="col-lg-9">
-                                        <img> 
-                                                
-                                        </img>
-                                        </div>
-                                    </div>
+                        </div>
+                        <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="login2 pull-left pull-left-pro">Imagen</label>
                                 </div>
+                                <div class="col-lg-9">
+                                    <img>
+
+                                    </img>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -241,16 +265,14 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">    
-                                    <span aria-hidden="true">&times;</span>
-                                    </button><h4 class="modal-title" id="exampleModalLongTitle">REPORTAR</h4>
-                        
+                        <h4 class="modal-title" id="exampleModalLongTitle">REPORTAR</h4>
+
                     </div>
                     <div class="modal-body">
                         <div class="form-group-inner">
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <label class="login2 pull-right pull-right-pro">Tipo de reporte</label>
+                                    <label class="login2 pull-left pull-left-pro">Lugar de reporte</label>
                                 </div>
                                 <div class="col-lg-9">
                                     <div class="form-select-list">
@@ -262,8 +284,11 @@
                                             <option value="Baches">Baches</option>
                                             <option value="Basura">Basura</option>
                                             <option value="Maltrato animal">Maltrato animal</option>
-                                            <option value="Alteración del orden público">Alteración del orden público</option>
+                                            <option value="Alteración del orden público">Alteración del orden público
+                                            </option>
                                             <option value="Violencia intrafamiliar">Violencia intrafamiliar</option>
+                                            <option value="Personas en situación de calle">Personas en situación de
+                                                calle</option>
                                         </select>
                                     </div>
                                 </div>
@@ -272,7 +297,7 @@
                         <div class="form-group-inner">
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <label class="login2 pull-right pull-right-pro">Lugar</label>
+                                    <label class="login2 pull-left pull-left-pro">Lugar</label>
                                 </div>
                                 <div class="col-lg-9">
                                     <input type="text" id="lugar" class="form-control" />
@@ -282,11 +307,11 @@
                         <div class="form-group-inner">
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <label class="login2 pull-right pull-right-pro">Descripción</label>
+                                    <label class="login2 pull-left pull-left-pro">Descripción</label>
                                 </div>
                                 <div class="col-lg-9">
-                                    <textarea id="descripcion" class="form-control"> 
-                                        
+                                    <textarea id="descripcion" class="form-control">
+
                                     </textarea>
                                 </div>
                             </div>
@@ -294,14 +319,15 @@
                         <div class="form-group-inner">
                             <div class="row">
                                 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                                    <label class="login2 pull-right pull-right-pro">Agregar fotografía</label>
+                                    <label class="login2 pull-left pull-left-pro">Agregar fotografía</label>
                                 </div>
                                 <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                                     <div class="file-upload-inner file-upload-inner-right ts-forms">
                                         <div class="input append-big-btn">
-                                            
+
                                             <div class="">
-                                                <button class="btn btn-primary" id="foto" onclick="fotoDenuncia()">Seleccionar archivo</button>
+                                                <button class="btn btn-primary" id="foto"
+                                                    onclick="fotoDenuncia()">Seleccionar archivo</button>
                                                 <!--<input id="foto" type="file"
                                                     onchange="document.getElementById('append-big-btn').value = this.value;"> !-->
                                             </div>
@@ -314,7 +340,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" id="denuncia" onclick="addDenuncia()">Hacer denuncia</button>
+                        <button type="button" class="btn btn-primary" id="denuncia" onclick="addDenuncia()">Realizar
+                            queja</button>
                     </div>
                 </div>
             </div>
