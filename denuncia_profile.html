@@ -63,9 +63,12 @@
                 </div>
                 <div class="left-custom-menu-adp-wrap">
                     <ul class="nav navbar-nav left-sidebar-menu-pro">
-                        <li class="nav-item"><a href="#" class="nav-link">Perfil</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Denuncias</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Cerrar Sesión</a>
+                        <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-user"></i>&nbsp;Perfil</a>
+                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link"><i
+                                    class="fa fa-exclamation-triangle"></i>&nbsp;Denuncias</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-sign-out"></i>&nbsp;Cerrar
+                                Sesión</a>
                         </li>
                     </ul>
                 </div>
@@ -81,9 +84,12 @@
                         <div class="mobile-menu">
                             <nav id="dropdown">
                                 <ul class="mobile-menu-nav">
-                                    <li class="nav-item"><a href="#" class="nav-link">Perfil</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Denuncias</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Cerrar Sesión</a>
+                                    <li class="nav-item"><a href="#" class="nav-link"><i
+                                                class="fa fa-user"></i>&nbsp;Perfil</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link"><i
+                                                class="fa fa-exclamation-triangle"></i>&nbsp;Denuncias</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link"><i
+                                                class="fa fa-sign-out"></i>&nbsp;Cerrar Sesión</a></i>
                                     </li>
                                 </ul>
                             </nav>
@@ -100,108 +106,55 @@
                     <div class="row">
                         <div class="col-lg-2"></div>
                         <form id="">
-                            <div class="col-lg-6">
-                                <div class="login-bg" >
+                            <div class="col-lg-8">
+                                <div class="login-bg">
                                     <div class="contact-client-img contact-img-v2">
-                                        <a href="#"><img src="assets/img/notification/5.jpg" alt="" />
-                                        </a>
-                                        <h2><a class="contact-client-name" href="#">PERFIL DE USUARIO</a></h2>
+                                        <h1><a class="contact-client-name" href="#">DENUNCIAS</a></h1>
+                                        <button type="button" class="btn btn-custon-four btn-primary"
+                                            data-toggle="modal" data-target="#modaladd"><i
+                                                class="fa fa-plus-circle"></i>&nbsp;Agregar denuncia</button>
                                     </div>
-                                    <div class="contact-client-address">
-                                        <h3 align="center">Información</h3>
-                                        <div class="contact-client-footer" align="center">
-                                            <div class="btn-group">
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-edit"></i> Modificar</a>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="login-input-head">
-                                                    <p>Nombre de usuario </p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="login-input-area">
-                                                    <input type="text" id="username" />
-                                                    <i class="fa fa-user login-user"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="login-input-head">
-                                                    <p>Correo electrónico</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="login-input-area">
-                                                    <input type="email" id="email" />
-                                                    <i class="fa fa-envelope login-user" aria-hidden="true"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="login-input-head">
-                                                    <p>Número de teléfono</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="login-input-area">
-                                                    <input type="number" id="number" />
-                                                    <i class="fa fa-phone login-user" aria-hidden="true"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="login-input-head">
-                                                    <p>Género </p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="login-input-area">
-                                                    <input type="text" id="genero" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="login-input-head">
-                                                    <p>Dirección </p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="login-input-area">
-                                                    <input type="text" id="address" />
-                                                    <i class="fa fa-home login-user"></i>
-                                                </div>
-                                            </div>
+                                    <div class="sparkline10-graph">
+                                        <div class="static-table-list">
+                                            <table class="table border-table text-center">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">Denuncia</th>
+                                                        <th class="text-center">Fecha</th>
+                                                        <th class="text-center">Comprobar</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Denuncia 1</td>
+                                                        <td>07/11/19</td>
+                                                        <td class="text-center"><i class="fa fa-check"></i></td>
+                                                        <th data-toggle="modal" data-target="#modal" style="cursor: pointer;"><i
+                                                                class="fa fa-info-circle"></i>&nbsp;Ver más</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Denuncia 2</td>
+                                                        <td>07/11/19</td>
+                                                        <td class="text-center"><i class="fa fa-check"></i></td>
+                                                        <th data-toggle="modal" data-target="#modal" style="cursor: pointer;"><i
+                                                                class="fa fa-info-circle"></i>&nbsp;Ver más</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Denuncia 3</td>
+                                                        <td>07/11/19</td>
+                                                        <td class="text-center"><i class="fa fa-check"></i></td>
+                                                        <th data-toggle="modal" data-target="#modal" style="cursor: pointer;"><i
+                                                                class="fa fa-info-circle" ></i>&nbsp;Ver más</th>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
+                                    <br><br>
+
                                 </div>
-                                <br><br>
-                                
-                            </div>
-                            <div class="col-lg-3">
-                                    <div class="income-dashone-total nt-mg-b-30 res-mg-t-30 login-bg" align="center">
-                                            <div class="income-title">
-                                                <div class="main-income-head">
-                                                    <h2>PUNTOS DE CREDIBILIDAD</h2>
-                                                </div>
-                                            </div>
-                                            <div class="income-dashone-pro">
-                                                <div class="income-rate-total">
-                                                    <div class="price-adminpro-rate">
-                                                        <h3><span class="counter">15</span></h3>
-                                                    </div>
-                                                    <div class="price-graph">
-                                                        <span id="sparkline1"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="clear"></div>
-                                            </div>
-                                        </div>
+
                             </div>
                         </form>
 
@@ -211,7 +164,161 @@
             </div>
 
         </div>
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">DENUNCIA</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="login2 pull-right pull-right-pro">Tipo de reporte</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <div class="form-select-list">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="login2 pull-right pull-right-pro">Lugar</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="login2 pull-right pull-right-pro">Fecha y hora</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="login2 pull-right pull-right-pro">Descripción</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="modal fade" id="modaladd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">REPORTAR </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="login2 pull-right pull-right-pro">Tipo de reporte</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <div class="form-select-list">
+                                        <select class="form-control custom-select-value" name="account">
+                                            <option value="0">Seleccionar...</option>
+                                            <option value="Transporte público">Transporte público</option>
+                                            <option value="Luz">Luz</option>
+                                            <option value="Agua">Agua</option>
+                                            <option value="Baches">Baches</option>
+                                            <option value="Basura">Basura</option>
+                                            <option value="Maltrato animal">Maltrato animal</option>
+                                            <option value="Alteración del orden público">Alteración del orden público</option>
+                                            <option value="Violencia intrafamiliar">Violencia intrafamiliar</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="login2 pull-right pull-right-pro">Lugar</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="login2 pull-right pull-right-pro">Fecha y hora</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <input type="date" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="login2 pull-right pull-right-pro">Descripción</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <textarea class="form-control"> 
+                                        
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                                    <label class="login2 pull-right pull-right-pro">Agregar fotografía</label>
+                                </div>
+                                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                        <div class="input append-big-btn">
+                                            
+                                            <div class="">
+                                                
+                                                <input type="file"
+                                                    onchange="document.getElementById('append-big-btn').value = this.value;">
+                                            </div>
+                                            <input type="text" id="append-big-btn" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Hacer denuncia</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Index end -->
 
