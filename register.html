@@ -46,6 +46,9 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+
 </head>
 
 <body style="background-image: url('assets/img/durango.png');">
@@ -54,7 +57,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3"></div>
-                <form id="adminpro-register-form" class="adminpro-form">
+                <div id="adminpro-register-form" class="adminpro-form">
                     <div class="col-lg-6">
                         <div class="login-bg">
                             <div class="row">
@@ -68,19 +71,19 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="login-title">
-                                            <h1 align="center">Registro</h1>
+                                        <h1 align="center">Registro</h1>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="login-input-head">
-                                        <p>Nombre de usuario    </p>
+                                        <p>Nombre de usuario </p>
                                     </div>
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="login-input-area">
-                                        <input type="text" name="username" />
+                                        <input type="text" id="username" />
                                         <i class="fa fa-user login-user"></i>
                                     </div>
                                 </div>
@@ -93,7 +96,7 @@
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="login-input-area">
-                                        <input type="email" name="email" />
+                                        <input type="email" id="email" />
                                         <i class="fa fa-envelope login-user" aria-hidden="true"></i>
                                     </div>
                                 </div>
@@ -106,7 +109,7 @@
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="login-input-area">
-                                        <input type="number" name="number" />
+                                        <input type="number" id="number" />
                                         <i class="fa fa-phone login-user" aria-hidden="true"></i>
                                     </div>
                                 </div>
@@ -119,7 +122,7 @@
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="login-input-area">
-                                        <input type="password" name="password" />
+                                        <input type="password" id="password" />
                                         <i class="fa fa-lock login-user"></i>
                                     </div>
                                 </div>
@@ -132,7 +135,7 @@
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="login-input-area">
-                                        <input type="password" name="confarm_password" />
+                                        <input type="password" id="confirm_password" />
                                         <i class="fa fa-lock login-user"></i>
                                     </div>
                                 </div>
@@ -145,7 +148,8 @@
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="login-input-area form-select-list">
-                                        <select class="form-control custom-selecr-value" style="margin-top: 3%;">
+                                        <select id='gender' class="form-control custom-selecr-value"
+                                            style="margin-top: 3%;">
                                             <option value="Mujer">Femenino</option>
                                             <option value="Hombre">Masculino</option>
                                             <option value="None">Prefiero no decirlo</option>
@@ -154,36 +158,53 @@
                                 </div>
                             </div>
                             <div class="row">
-                                    <div class="col-lg-4">
-                                        <div class="login-input-head">
-                                            <p>Dirección    </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <div class="login-input-area">
-                                            <input type="text" name="address" />
-                                            <i class="fa fa-home login-user"></i>
-                                        </div>
+                                <div class="col-lg-4">
+                                    <div class="login-input-head">
+                                        <p>Dirección </p>
                                     </div>
                                 </div>
+                                <div class="col-lg-8">
+                                    <div class="login-input-area">
+                                        <input type="text" id="address" />
+                                        <i class="fa fa-home login-user"></i>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col-lg-4"></div>
                                 <div class="col-lg-8">
                                     <div class="login-button-pro">
-                                        <button type="reset" class="login-button login-button-rg">Cancelar</button>
-                                        <button type="submit" class="login-button login-button-lg">Registrarme</button>
+                                        <button type="reset" id="cancel"
+                                            class="login-button login-button-rg">Cancelar</button>
+                                        <button type="submit" id="register"
+                                            class="login-button login-button-lg" onclick="registrar()">Registrarme</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
                 <div class="col-lg-3"></div>
             </div>
         </div>
     </div>
     <!-- Register End-->
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-functions.js"></script>
+
+    <script src="assets/js/inicio.js" charset="utf-8"></script>
+
+    <script src="assets/js/register.js"></script>
+
     <!-- jquery
         ============================================ -->
     <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
@@ -209,6 +230,8 @@
     <script src="assets/js/form-active.js"></script>
     <!-- main JS
         ============================================ -->
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
     <script src="assets/js/main.js"></script>
 </body>
 
