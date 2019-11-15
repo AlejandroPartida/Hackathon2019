@@ -142,12 +142,12 @@ padding: 0
 	color: #fff;
 }
 .header-top-menu .navbar-nav>li .dropdown-menu a:hover{
-	background:#2b2a2a;
+	background:#000000;
 }
 .header-top-menu .navbar-nav>li .dropdown-menu{
 	border: 0px solid #ccc; 
     border: 0px solid rgba(0,0,0,.15);
-	background-color: #303030;	
+	background-color: #070707;	
 }
 .header-right-info .navbar-nav>li .dropdown-menu{
 	border: 0px solid #ccc; 
@@ -689,7 +689,7 @@ ul.setting-panel-list li{
 	padding:10px 0px;
 }
 .header-top-area{
-	background:#303030;
+	background:#000000;
 	
 }
 .header-top-menu ul.header-top-nav{
