@@ -46,6 +46,8 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://kit.fontawesome.com/edbad2c4f8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 </head>
 
 <body>
@@ -57,7 +59,11 @@
         <div class="left-sidebar-pro">
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <a href="#"><img src="assets/img/message/1.jpg" alt="" />
+                      <a href="#"><img src="test" alt="" />
+                      <br>
+
+                    <button id = "fileButton" onclick = "upload()"class="far fa-plus-square"></button>
+
                     </a>
                     <h3>Nombre de usuario</h3>
                 </div>
@@ -111,7 +117,7 @@
                             <div class="col-lg-6">
                                 <div class="login-bg">
                                     <div class="contact-client-img contact-img-v2">
-                                        <a href="#"><img src="assets/img/notification/5.jpg" alt="" />
+                                        <a href="#"><img src="test" height="125px" width="200px" />
                                         </a>
                                         <h2><a class="contact-client-name" href="#">PERFIL DE USUARIO</a></h2>
                                     </div>
@@ -240,8 +246,30 @@
 
     <script src="assets/js/auth.js"></script>
     <script src="assets/js/user_profile.js"></script>
+    <script src="assets/js/upload.js" charset="utf-8"></script>
 
     <script>
+<<<<<<< HEAD
+    function checkUserStatus() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          //Si user es verdadero, significa que hay un usuario autenticado
+        user.getIdTokenResult().then(idTokenResult => {
+            user.normal = idTokenResult.claims.normal;
+            //user.administrador = idTokenResult.claims.pyme;
+
+            if(user.normal){
+                location.href = "user_profile.html";
+            }
+            //else if(user.administrador){
+              //location.href = "pyme-solicitudes.html";
+            //}
+          });
+        } else {
+          // User is signed out.
+
+
+=======
         function checkUserStatus() {
             firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {
@@ -263,9 +291,11 @@
 
                 }
             });
+>>>>>>> 83c05440c769f6fb6a1711a57d6ff5122691d0a5
         }
     //window.onload = checkUserStatus();
     </script>
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-storage.js"></script>
 
     <!-- jquery
         ============================================ -->

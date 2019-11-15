@@ -18,7 +18,7 @@ function registrar() {
 
 
     if (username != "" && email != "" && phonenumber != "" && password != "" && confirm_password != "" && gender != "" && address != "") {
-        
+
         auth.createUserWithEmailAndPassword(email, confirm_password).then(user=>{
           const getUid = functions.httpsCallable('getUser');
           getUid({email: email}).then(result =>{
@@ -27,7 +27,7 @@ function registrar() {
             const addNormalRole = functions.httpsCallable('addNormalRole');
             addNormalRole({ email: email }).then(result => {});
             console.log(username);
-            
+
             db.collection("users").doc(uid).set({
                 username: username,
                 phonenumber: phonenumber,
@@ -35,15 +35,16 @@ function registrar() {
                 address: address,
                 poc: 15
             })
-    
+
                 .then(() => {
                     user.value = "";
                     email.value = "";
                     phonenumber.value = "";
                     gender.value = "";
                     address.value = "";
-    
-    
+                    profilePicURL = "https://firebasestorage.googleapis.com/v0/b/hackathon2019-b9401.appspot.com/o/fotosUsuarios%2Fprofile.jpeg?alt=media&token=922b4a78-0152-48a4-ae19-65789cbcde3a"
+
+
                     Swal.fire({
                         type: 'success',
                         title: 'Registro completo',
@@ -52,18 +53,18 @@ function registrar() {
                     }).then(result => {
                         location.href = 'login.html';
                     })
-    
-    
+
+
                 })
                 .catch(function (error) {
                     console.error("Error adding document: ", error);
                 });
-    
+
           });
 
-          
+
         });
-        
+
     }
     else {
         Swal.fire({

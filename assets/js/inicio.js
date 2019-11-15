@@ -1,4 +1,5 @@
 src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js";
+src="https://www.gstatic.com/firebasejs/7.4.0/firebase-storage.js";
 
 
   var firebaseConfig = {
@@ -17,4 +18,3 @@ src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js";
   const db = firebase.firestore();
   const functions = firebase.functions();
   const auth = firebase.auth();
-
