@@ -13,4 +13,8 @@ src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js";
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  //const analytics = firebase.analytics();
+  const db = firebase.firestore();
+  const functions = firebase.functions();
+  const auth = firebase.auth();
+
