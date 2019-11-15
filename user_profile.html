@@ -138,19 +138,6 @@
                                         <div class="row">
                                             <div class="col-lg-4">
                                                 <div class="login-input-head">
-                                                    <p>Correo electrónico</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="login-input-area">
-                                                    <input type="email" id="email" disabled />
-                                                    <i class="fa fa-envelope login-user" aria-hidden="true"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="login-input-head">
                                                     <p>Número de teléfono</p>
                                                 </div>
                                             </div>
@@ -198,7 +185,7 @@
                                             </div>
                                             <div class="col-lg-8" align="right">
                                                 <div class="btn-group" >
-                                                    <a class="btn btn btn-danger" type="reset"><i class="fa fa-times"></i> Cancelar</a>
+                                                    <a class="btn btn btn-danger" type="reset" onclick="cancelar()"><i class="fa fa-times"></i> Cancelar</a>
                                                 </div>
                                                 <div class="btn-group" >
                                                         <a class="btn btn btn-success"><i class="fa fa-save"></i> Editar</a>
@@ -219,8 +206,7 @@
                                     </div>
                                     <div class="income-dashone-pro">
                                         <div class="income-rate-total">
-                                            <div class="price-adminpro-rate">
-                                                <h3><span class="counter">15</span></h3>
+                                            <div class="price-adminpro-rate" id="poc">
                                             </div>
                                             <div class="price-graph">
                                                 <span id="sparkline1"></span>
@@ -251,6 +237,8 @@
     <script src="assets/js/inicio.js" charset="utf-8"></script>
 
     <script src="assets/js/auth.js"></script>
+    <script src="assets/js/user_profile.js"></script>
+
     <script>
     function checkUserStatus() {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -261,7 +249,7 @@
             //user.administrador = idTokenResult.claims.pyme;
     
             if(user.normal){
-                location.href = "index.html";
+                location.href = "user_profile.html";
             }
             //else if(user.administrador){
               //location.href = "pyme-solicitudes.html";
@@ -274,10 +262,9 @@
         }
       });
     }
-    window.onload = checkUserStatus();
+    //window.onload = checkUserStatus();
     </script>
 
-    <script src="assets/js/user_profile.js"></script>
     <!-- jquery
         ============================================ -->
     <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>

@@ -46,6 +46,8 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
 </head>
 
 <body>
@@ -110,7 +112,7 @@
                                 <div class="login-bg">
                                     <div class="contact-client-img contact-img-v2">
                                         <h1><a class="contact-client-name" href="#">DENUNCIAS</a></h1>
-                                        <button type="button" class="btn btn-custon-four btn-primary"
+                                        <button type="button" onclick="clearModalInputs()" class="btn btn-custon-four btn-primary"
                                             data-toggle="modal" data-target="#modaladd"><i
                                                 class="fa fa-plus-circle"></i>&nbsp;Agregar denuncia</button>
                                     </div>
@@ -252,7 +254,7 @@
                                 </div>
                                 <div class="col-lg-9">
                                     <div class="form-select-list">
-                                        <select class="form-control custom-select-value" name="account">
+                                        <select class="form-control custom-select-value" id="tipo">
                                             <option value="0">Seleccionar...</option>
                                             <option value="Transporte público">Transporte público</option>
                                             <option value="Luz">Luz</option>
@@ -273,7 +275,7 @@
                                     <label class="login2 pull-right pull-right-pro">Lugar</label>
                                 </div>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" />
+                                    <input type="text" id="lugar" class="form-control" />
                                 </div>
                             </div>
                         </div>
@@ -283,7 +285,7 @@
                                     <label class="login2 pull-right pull-right-pro">Descripción</label>
                                 </div>
                                 <div class="col-lg-9">
-                                    <textarea class="form-control"> 
+                                    <textarea id="descripcion" class="form-control"> 
                                         
                                     </textarea>
                                 </div>
@@ -299,11 +301,10 @@
                                         <div class="input append-big-btn">
                                             
                                             <div class="">
-                                                
-                                                <input type="file"
-                                                    onchange="document.getElementById('append-big-btn').value = this.value;">
+                                                <button class="btn btn-primary" id="foto" onclick="fotoDenuncia()">Seleccionar archivo</button>
+                                                <!--<input id="foto" type="file"
+                                                    onchange="document.getElementById('append-big-btn').value = this.value;"> !-->
                                             </div>
-                                            <input type="text" id="append-big-btn" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -313,14 +314,25 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Hacer denuncia</button>
+                        <button type="button" class="btn btn-primary" id="denuncia" onclick="addDenuncia()">Hacer denuncia</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Index end -->
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+    <!-- Register End-->
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-functions.js"></script>
 
+    <script src="assets/js/inicio.js" charset="utf-8"></script>
+
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/denuncia_profile.js"></script>
     <!-- jquery
         ============================================ -->
     <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
