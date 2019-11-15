@@ -95,7 +95,7 @@
                                                 class="fa fa-user"></i>&nbsp;Perfil</a>
                                     </li>
                                     <li class="nav-item"><a href="denuncia_profile.html" class="nav-link"><i
-                                                class="fa fa-exclamation-triangle"></i>&nbsp;Denuncias</a></li>
+                                                class="fa fa-exclamation-triangle"></i>&nbsp;Quejas</a></li>
                                     <li class="nav-item"><a href="#" class="nav-link"><i
                                                 class="fa fa-sign-out"></i>&nbsp;Cerrar Sesión</a></i>
                                     </li>
@@ -125,7 +125,8 @@
                                         <h3 align="center">Información</h3>
                                         <div class="contact-client-footer" align="right">
                                             <div class="btn-group">
-                                                <a class="btn btn btn-white" onclick="edit()"><i class="fa fa-edit"></i> Editar</a>
+                                                <a class="btn btn btn-white" onclick="edit()"><i class="fa fa-edit"></i>
+                                                    Editar</a>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -190,12 +191,13 @@
 
                                             </div>
                                             <div class="col-lg-8" align="right">
-                                                <div class="btn-group" >
-                                                    <a class="btn btn btn-danger" type="reset" onclick="cancelar()"><i class="fa fa-times"></i> Cancelar</a>
+                                                <div class="btn-group">
+                                                    <a class="btn btn btn-danger" type="reset" onclick="cancelar()"><i
+                                                            class="fa fa-times"></i> Cancelar</a>
                                                 </div>
-                                                <div class="btn-group" >
-                                                        <a class="btn btn btn-success"><i class="fa fa-save"></i> Editar</a>
-                                                    </div>
+                                                <div class="btn-group">
+                                                    <a class="btn btn btn-success"><i class="fa fa-save"></i> Editar</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -247,6 +249,7 @@
     <script src="assets/js/upload.js" charset="utf-8"></script>
 
     <script>
+<<<<<<< HEAD
     function checkUserStatus() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -266,9 +269,30 @@
           // User is signed out.
 
 
+=======
+        function checkUserStatus() {
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    //Si user es verdadero, significa que hay un usuario autenticado
+                    user.getIdTokenResult().then(idTokenResult => {
+                        user.normal = idTokenResult.claims.normal;
+                        //user.administrador = idTokenResult.claims.pyme;
+
+                        if (user.normal) {
+                            location.href = "user_profile.html";
+                        }
+                        //else if(user.administrador){
+                        //location.href = "pyme-solicitudes.html";
+                        //}
+                    });
+                } else {
+                    // User is signed out.
+
+
+                }
+            });
+>>>>>>> 83c05440c769f6fb6a1711a57d6ff5122691d0a5
         }
-      });
-    }
     //window.onload = checkUserStatus();
     </script>
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-storage.js"></script>

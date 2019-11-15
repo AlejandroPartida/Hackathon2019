@@ -58,18 +58,3 @@ async function upload() {
     }
 
 }
-
-
-
-
-
-     var storageRef = firebase.storage().ref();
-     var spaceRef = storageRef.child('fotoUsuarios/');
-     storageRef.child('fotoUsuarios/').getDownloadURL().then(function(url) {
-         var test = url;
-         alert(url);
-         document.querySelector('img').src = test;
-
-     }).catch(function(error) {
-
-     });
