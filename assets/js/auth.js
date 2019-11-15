@@ -1,38 +1,46 @@
-const loginForm = document.querySelector('#login-form');
-loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+function logIn() {
   //Get user info
-  const email = loginForm['email'].value;
-  const password = loginForm['password'].value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
 
   auth.signInWithEmailAndPassword(email, password).then(cred => {
-    console.log(cred.user);
+  console.log('logged in');
   }).catch(error => {
+      console.log(error);
+
     Swal.fire({
       type: 'error',
       title: 'Correo electrónico y/o contraseña incorrectos',
       text: 'Verifica tu información'
     });
   });
+
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       //Si user es verdadero, significa que hay un usuario autenticado
-      user.getIdTokenResult().then(idTokenResult => {
-        user.moderador = idTokenResult.claims.moderador;
-        user.pyme = idTokenResult.claims.pyme;
-        user.ancla = idTokenResult.claims.ancla;
+    user.getIdTokenResult().then(idTokenResult => {
+        user.normal = idTokenResult.claims.normal;
+        //user.administrador = idTokenResult.claims.pyme;
 
-        if(user.moderador){
-          location.href = "moderador.html";
-        }else if(user.pyme){
-          location.href = "pyme-solicitudes.html";
-        }else if(user.ancla){
-          location.href = "ancla-solicitudes.html";
+        if(user.normal){            
+          window.location.href = "index.html";
         }
+        //else if(user.administrador){
+          //location.href = "pyme-solicitudes.html";
+        //}
       });    
     } else {
       // User is signed out.
-      // ...
     }
   });
-})
+  
+}
+
+
+
+function logOut() {
+    firebase.auth().signOut().then(() => {
+        console.log('logged out successfully');
+        window.location.href = "login.html";
+    });
+}
