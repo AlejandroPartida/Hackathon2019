@@ -1,7 +1,7 @@
 var userUid;
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-        
+
         // User is signed in.
         var userId = user.uid;
         userUid = userId;
@@ -13,7 +13,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             var address = document.getElementById('address');
 
             console.log(doc.data().username);
-            
+
 
             username.value = doc.data().username;
             number.value = doc.data().phonenumber;
@@ -23,7 +23,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         }));
     } else {
         // No user is signed in.
-        
+
     }
 });
 
@@ -55,3 +55,22 @@ function cancelar() {
 
     })
 }
+
+
+
+//Display Profile Picture
+/*
+function showUserDetails(){
+
+   var user = firebase.auth().currentUser;
+   var name, photoUrl;
+
+   if (user != null) {
+      name = user.displayName;
+      photoUrl = user.photoURL;
+
+      document.getElementById('dp').innerHTML=photoURL;
+      document.getElementById('username').innerHTML=name;
+}
+}
+*/
