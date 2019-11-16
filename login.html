@@ -48,7 +48,33 @@
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-
+    <script>
+        function geoFindMe() {
+            
+     var output = document.getElementById("out");
+   
+     if (!navigator.geolocation){
+       swal("Error","Tu navegador no es compatible con el servicio de localización","error");
+       return;
+     }
+   
+     function success(position) {
+       latitude  = position.coords.latitude;
+       longitude = position.coords.longitude;
+       var lu=latitude+","+longitude;
+       
+   
+     }
+     function error() {
+        swal("Error","Hubo un error al detectar tu ubicación","error");
+     };
+   
+   
+   
+     navigator.geolocation.getCurrentPosition(success, error);
+        }
+   
+       </script>
 </head>
 
 <body style="background-image: url('assets/img/durango.png');">
@@ -110,7 +136,7 @@
                                     <div class="login-button-pro">
                                         <button type="reset" class="login-button login-button-rg">Cancelar</button>
                                         <button type="button" class="login-button login-button-rg" onclick="logOut()">Log out</button>
-                                        <button type="submit" class="login-button login-button-lg" onclick="logIn()">Iniciar sesión</button>
+                                        <button type="submit" class="login-button login-button-lg" onclick="geoFindMe();logIn()">Iniciar sesión</button>
                                     </div>
                                 </div>
                             </div>
