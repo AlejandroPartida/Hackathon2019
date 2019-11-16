@@ -50,31 +50,56 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script>
         function geoFindMe() {
-            
-     var output = document.getElementById("out");
-   
-     if (!navigator.geolocation){
-       swal("Error","Tu navegador no es compatible con el servicio de localización","error");
-       return;
-     }
-   
-     function success(position) {
-       latitude  = position.coords.latitude;
-       longitude = position.coords.longitude;
-       var lu=latitude+","+longitude;
-       
-   
-     }
-     function error() {
-        swal("Error","Hubo un error al detectar tu ubicación","error");
-     };
-   
-   
-   
-     navigator.geolocation.getCurrentPosition(success, error);
+
+            var output = document.getElementById("out");
+
+            if (!navigator.geolocation) {
+                swal("Error", "Tu navegador no es compatible con el servicio de localización", "error");
+                return;
+            }
+
+            function success(position) {
+                latitude = position.coords.latitude;
+                longitude = position.coords.longitude;
+                var lu = "[" + latitude + "," + longitude + "]";
+                 
+
+                logIn();
+
+                firebase.auth().onAuthStateChanged(user => {
+                    if (user) {
+                        
+
+                        user.getIdTokenResult().then(idTokenResult => {
+                            db.collection('users').doc(user.uid).update({
+                            location: new firebase.firestore.GeoPoint(lu)
+                            });
+                            user.normal = idTokenResult.claims.normal;
+                            //user.administrador = idTokenResult.claims.pyme;
+
+                            if (user.normal) {
+                                window.location.href = "index.html";
+                            }
+                            //else if(user.administrador){
+                            //location.href = "pyme-solicitudes.html";
+                            //}
+                        });
+                    }
+                })
+
+
+
+            }
+            function error() {
+                swal("Error", "Hubo un error al detectar tu ubicación", "error");
+            };
+
+
+
+            navigator.geolocation.getCurrentPosition(success, error);
         }
-   
-       </script>
+
+    </script>
 </head>
 
 <body style="background-image: url('assets/img/durango.png');">
@@ -97,7 +122,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="login-title">
-                                            <h1 align="center">Iniciar sesión</h1>
+                                        <h1 align="center">Iniciar sesión</h1>
                                     </div>
                                 </div>
                             </div>
@@ -135,8 +160,10 @@
                                 <div class="col-lg-8">
                                     <div class="login-button-pro">
                                         <button type="reset" class="login-button login-button-rg">Cancelar</button>
-                                        <button type="button" class="login-button login-button-rg" onclick="logOut()">Log out</button>
-                                        <button type="submit" class="login-button login-button-lg" onclick="geoFindMe();logIn()">Iniciar sesión</button>
+                                        <button type="button" class="login-button login-button-rg"
+                                            onclick="logOut()">Log out</button>
+                                        <button type="submit" class="login-button login-button-lg"
+                                            onclick="geoFindMe();">Iniciar sesión</button>
                                     </div>
                                 </div>
                             </div>
@@ -147,8 +174,8 @@
             </div>
         </div>
     </div>
-     <!-- The core Firebase JS SDK is always required and must be listed first -->
-     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
     <!-- Register End-->
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
@@ -159,29 +186,30 @@
 
     <script src="assets/js/auth.js"></script>
     <script>
-    function checkUserStatus() {
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-          //Si user es verdadero, significa que hay un usuario autenticado
-        user.getIdTokenResult().then(idTokenResult => {
-            user.normal = idTokenResult.claims.normal;
-            //user.administrador = idTokenResult.claims.pyme;
-    
-            if(user.normal){
-                location.href = "index.html";
-            }
-            //else if(user.administrador){
-              //location.href = "pyme-solicitudes.html";
-            //}
-          });    
-        } else {
-          // User is signed out.
-          
-          
+        function checkUserStatus() {
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+
+                    //Si user es verdadero, significa que hay un usuario autenticado
+                    user.getIdTokenResult().then(idTokenResult => {
+                        user.normal = idTokenResult.claims.normal;
+                        //user.administrador = idTokenResult.claims.pyme;
+
+                        if (user.normal) {
+                            location.href = "denuncia_profile.html";
+                        }
+                        //else if(user.administrador){
+                        //location.href = "pyme-solicitudes.html";
+                        //}
+                    });
+                } else {
+                    // User is signed out.
+
+
+                }
+            });
         }
-      });
-    }
-    window.onload = checkUserStatus();
+        window.onload = checkUserStatus();
     </script>
 
     <!-- jquery
