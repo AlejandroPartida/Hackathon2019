@@ -346,6 +346,58 @@
     <!-- main JS
         ============================================ -->
     <script src="assets/js/main.js"></script>
+    <script>
+    var userUid;
+    var pp1 = document.getElementById('pp1');
+    var pp2 = document.getElementById('pp2');
+    var username = document.getElementById('username1');
+    function checkUserStatus() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          //Si user es verdadero, significa que hay un usuario autenticado
+        var userId = user.uid;
+        userUid = userId;
+        user.getIdTokenResult().then(idTokenResult => {
+            user.normal = idTokenResult.claims.normal;
+            //user.administrador = idTokenResult.claims.pyme;
+
+            if(user.normal){
+                location.href = "user_profile.html";
+            }
+            //else if(user.administrador){
+              //location.href = "pyme-solicitudes.html";
+            //}
+          });
+        } else {
+          // User is signed out.
+
+
+        }
+      });
+    }
+
+    function displayUserData() {
+      firebase.auth().onAuthStateChanged(function (user) {
+          if (user) {
+            //Si user es verdadero, significa que hay un usuario autenticado
+          var userId = user.uid;
+          userUid = userId;
+            db.collection('users').doc(userId).get().then(doc => {
+                pp1.src = doc.data().profilePicURL;
+                pp2.src = doc.data().profilePicURL;
+                username.innerText = doc.data().username;
+            })
+          } else {
+            // User is signed out.
+
+
+          }
+        });
+      console.log(userUid);
+
+    }
+    window.onload = displayUserData();
+    </script>
 </body>
 
 </html>
