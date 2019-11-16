@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Perfil | A LA MIRA </title>
+    <title>Inicio | A LA MIRA </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
         ============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo_alamira2.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo_alamira.png">
     <!-- Google Fonts
         ============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
@@ -73,7 +73,7 @@
                                     class="fa fa-user"></i>&nbsp;Perfil</a>
                         </li>
                         <li class="nav-item"><a href="denuncia_profile.html" class="nav-link"><i
-                                    class="fa fa-exclamation-triangle"></i>&nbsp;Quejas</a></li>
+                                    class="fa fa-exclamation-triangle"></i>&nbsp;Denuncias</a></li>
                         <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-sign-out"></i>&nbsp;Cerrar
                                 Sesión</a>
                         </li>
@@ -95,7 +95,7 @@
                                                 class="fa fa-user"></i>&nbsp;Perfil</a>
                                     </li>
                                     <li class="nav-item"><a href="denuncia_profile.html" class="nav-link"><i
-                                                class="fa fa-exclamation-triangle"></i>&nbsp;Quejas</a></li>
+                                                class="fa fa-exclamation-triangle"></i>&nbsp;Denuncias</a></li>
                                     <li class="nav-item"><a href="#" class="nav-link"><i
                                                 class="fa fa-sign-out"></i>&nbsp;Cerrar Sesión</a></i>
                                     </li>
@@ -125,8 +125,7 @@
                                         <h3 align="center">Información</h3>
                                         <div class="contact-client-footer" align="right">
                                             <div class="btn-group">
-                                                <a class="btn btn btn-white" onclick="edit()"><i class="fa fa-edit"></i>
-                                                    Editar</a>
+                                                <a class="btn btn btn-white" onclick="edit()"><i class="fa fa-edit"></i> Editar</a>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -191,13 +190,12 @@
 
                                             </div>
                                             <div class="col-lg-8" align="right">
-                                                <div class="btn-group">
-                                                    <a class="btn btn btn-danger" type="reset" onclick="cancelar()"><i
-                                                            class="fa fa-times"></i> Cancelar</a>
+                                                <div class="btn-group" >
+                                                    <a class="btn btn btn-danger" type="reset" onclick="cancelar()"><i class="fa fa-times"></i> Cancelar</a>
                                                 </div>
-                                                <div class="btn-group">
-                                                    <a class="btn btn btn-success"><i class="fa fa-save"></i> Editar</a>
-                                                </div>
+                                                <div class="btn-group" >
+                                                        <a class="btn btn btn-success"><i class="fa fa-save"></i> Editar</a>
+                                                    </div>
                                             </div>
                                         </div>
                                     </div>
@@ -249,7 +247,6 @@
     <script src="assets/js/upload.js" charset="utf-8"></script>
 
     <script>
-<<<<<<< HEAD
     var userUid;
     var pp1 = document.getElementById('pp1');
     var pp2 = document.getElementById('pp2');
@@ -263,28 +260,18 @@
         user.getIdTokenResult().then(idTokenResult => {
             user.normal = idTokenResult.claims.normal;
             //user.administrador = idTokenResult.claims.pyme;
-        function checkUserStatus() {
-            firebase.auth().onAuthStateChanged(function (user) {
-                if (user) {
-                    //Si user es verdadero, significa que hay un usuario autenticado
-                    user.getIdTokenResult().then(idTokenResult => {
-                        user.normal = idTokenResult.claims.normal;
-                        //user.administrador = idTokenResult.claims.pyme;
->>>>>>> bf3c5c7df0608e2dca60d24256aca2ba8e44a4ed
 
-                        if (user.normal) {
-                            location.href = "user_profile.html";
-                        }
-                        //else if(user.administrador){
-                        //location.href = "pyme-solicitudes.html";
-                        //}
-                    });
-                } else {
-                    // User is signed out.
+            if(user.normal){
+                location.href = "user_profile.html";
+            }
+            //else if(user.administrador){
+              //location.href = "pyme-solicitudes.html";
+            //}
+          });
+        } else {
+          // User is signed out.
 
 
-                }
-            });
         }
       });
     }

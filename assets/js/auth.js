@@ -15,7 +15,31 @@ function logIn() {
     });
   });
 
-  
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      //Si user es verdadero, significa que hay un usuario autenticado
+    user.getIdTokenResult().then(idTokenResult => {
+        user.normal = idTokenResult.claims.normal;
+        //user.administrador = idTokenResult.claims.pyme;
+
+        if(user.normal){     
+          if("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                    console.log(position);
+                    position.coords.latitude;
+                    position.coords.longitude; 
+            });
+    }       
+          window.location.href = "index.html";
+        }
+        //else if(user.administrador){
+          //location.href = "pyme-solicitudes.html";
+        //}
+      });    
+    } else {
+      // User is signed out.
+    }
+  });
   
 }
 
