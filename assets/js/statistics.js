@@ -10,7 +10,10 @@ var psc = 0;
 
 var pend = 0, proc = 0, fina = 0;
 
-var ver=0, fal=0;
+var ver = 0, fal = 0;
+
+var poc = 0;
+var username;
 
 db.collection('denuncias').get().then(querySnapshot => {
     querySnapshot.forEach(doc => {
@@ -116,18 +119,18 @@ db.collection('denuncias').get().then(querySnapshot => {
                     'rgba(255, 99, 132)',
                     'rgba(54, 162, 235)',
                     'rgba(255, 206, 86)',
-                    
+
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)'
-                    
+
                 ],
                 borderWidth: 1
             }]
         },
-        
+
     });
 
 });
@@ -138,11 +141,11 @@ db.collection('denuncias').get().then(querySnapshot => {
             ver++;
         } else if (doc.data().veracidad == "Falsa") {
             fal++;
-        } 
+        }
     })
     console.log('Verdaderas ' + ver);
     console.log('Falsas ' + fal);
- 
+
 
     var ctx3 = document.getElementById('myChart3').getContext('2d');
     var myChart3 = new Chart(ctx3, {
@@ -154,17 +157,41 @@ db.collection('denuncias').get().then(querySnapshot => {
                 backgroundColor: [
                     'rgba(0, 143, 57)',
                     'rgba(247, 094, 037)'
-                    
+
                 ],
                 borderColor: [
                     'rgba(0, 143, 57, 1)',
                     'rgba(247, 094, 037, 1)'
-                    
+
                 ],
                 borderWidth: 1
             }]
         },
-        
+
     });
 
 });
+
+
+//User is signed in
+db.collection('users').orderBy('poc', 'desc').limit(5)
+    .get()
+    .then(querySnapshot => {
+
+        console.log(querySnapshot.empty);
+        if (querySnapshot.empty) {
+            ranking.innerHTML = '<h3> No existen usuarios </h3>'
+        }
+        else {
+            querySnapshot.forEach(doc => {
+                ranking.innerHTML += `
+                <ul class="list-group">
+                <li class="list-group-item">${doc.data().username}<span class="badge badge-primary badge-pill">${doc.data().poc}</span></li>
+</ul>
+       
+                    `
+
+            })
+        }
+
+    })
