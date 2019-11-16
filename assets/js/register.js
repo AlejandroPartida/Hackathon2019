@@ -33,7 +33,9 @@ function registrar() {
                 phonenumber: phonenumber,
                 gender: gender,
                 address: address,
-                poc: 15
+                poc: 15,
+                profilePicURL : "https://firebasestorage.googleapis.com/v0/b/hackathon2019-b9401.appspot.com/o/fotosUsuarios%2Fprofile.jpeg?alt=media&token=922b4a78-0152-48a4-ae19-65789cbcde3a"
+
             })
 
                 .then(() => {
@@ -42,7 +44,6 @@ function registrar() {
                     phonenumber.value = "";
                     gender.value = "";
                     address.value = "";
-                    profilePicURL = "https://firebasestorage.googleapis.com/v0/b/hackathon2019-b9401.appspot.com/o/fotosUsuarios%2Fprofile.jpeg?alt=media&token=922b4a78-0152-48a4-ae19-65789cbcde3a"
 
 
                     Swal.fire({

@@ -12,7 +12,7 @@
 
     <!-- favicon
         ============================================ -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo_alamira2.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo_alamira2.png">
     <!-- Google Fonts
         ============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
@@ -52,29 +52,29 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <script>
-     function geoFindMe() {
-  var output = document.getElementById("out");
+        function geoFindMe() {
+            var output = document.getElementById("out");
 
-  if (!navigator.geolocation){
-    swal("Error","Tu navegador no es compatible con el servicio de localización","error");
-    return;
-  }
+            if (!navigator.geolocation) {
+                swal("Error", "Tu navegador no es compatible con el servicio de localización", "error");
+                return;
+            }
 
-  function success(position) {
-    latitude  = position.coords.latitude;
-    longitude = position.coords.longitude;
-    var lu=latitude+","+longitude;
-    document.getElementById('lugar').value=lu;
+            function success(position) {
+                latitude = position.coords.latitude;
+                longitude = position.coords.longitude;
+                var lu = latitude + "," + longitude;
+                document.getElementById('lugar').value = lu;
 
-  }
-  function error() {
-     swal("Error","Hubo un error al detectar tu ubicación","error");
-  };
+            }
+            function error() {
+                swal("Error", "Hubo un error al detectar tu ubicación", "error");
+            };
 
 
 
-  navigator.geolocation.getCurrentPosition(success, error);
-     }
+            navigator.geolocation.getCurrentPosition(success, error);
+        }
 
     </script>
 
@@ -90,9 +90,9 @@
         <div class="left-sidebar-pro">
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <a href="#"><img id = "pp1" alt="" />
+                    <a href="#"><img id="pp1" alt="" />
                     </a>
-                    <h3 id = "username1"></h3>
+                    <h3 id="username1"></h3>
                 </div>
                 <div class="left-custom-menu-adp-wrap">
                     <ul class="nav navbar-nav left-sidebar-menu-pro">
@@ -101,7 +101,8 @@
                         </li>
                         <li class="nav-item"><a href="denuncia_profile.html" class="nav-link"><i
                                     class="fa fa-exclamation-triangle"></i>&nbsp;Quejas</a></li>
-                        <li class="nav-item"><a href="index.html" class="nav-link" onclick="logOut()"><i class="fa fa-sign-out"></i>&nbsp;Cerrar
+                        <li class="nav-item"><a href="index.html" class="nav-link" onclick="logOut()"><i
+                                    class="fa fa-sign-out"></i>&nbsp;Cerrar
                                 Sesión</a>
                         </li>
                     </ul>
@@ -123,8 +124,8 @@
                                     </li>
                                     <li class="nav-item"><a href="denuncia_profile.html" class="nav-link"><i
                                                 class="fa fa-exclamation-triangle"></i>&nbsp;Quejas</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link"><i
-                                                class="fa fa-sign-out" onclick="logOut()"></i>&nbsp;Cerrar Sesión</a></i>
+                                    <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-sign-out"
+                                                onclick="logOut()"></i>&nbsp;Cerrar Sesión</a></i>
                                     </li>
                                 </ul>
                             </nav>
@@ -154,7 +155,7 @@
                                             queja</button>
                                     </div>
                                     <div>
-                                        <div class="row" id = "quejas">
+                                        <div class="row" id="quejas">
 
 
                                         </div>
@@ -175,6 +176,9 @@
                     <div class="modal-header">
 
                         <h4 class="modal-title" id="exampleModalLongTitle">REPORTE</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
 
                     </div>
                     <div class="modal-body">
@@ -185,7 +189,7 @@
                                 </div>
                                 <div class="col-lg-9">
                                     <div class="form-select-list">
-                                        <input type="text" class="form-control" disabled id = "tipo"/>
+                                        <input type="text" class="form-control" disabled id="tipo" />
                                     </div>
                                 </div>
                             </div>
@@ -196,7 +200,7 @@
                                     <label class="login2 pull-left pull-left-pro">Lugar</label>
                                 </div>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" disabled id = "lugar"/>
+                                    <input type="text" class="form-control" disabled id="lugar" />
                                 </div>
                             </div>
                         </div>
@@ -206,7 +210,7 @@
                                     <label class="login2 pull-left pull-left-pro">Descripción</label>
                                 </div>
                                 <div class="col-lg-9">
-                                    <textarea class="form-control" disabled id = "descripcion">
+                                    <textarea class="form-control" disabled id="descripcion">
 
                                         </textarea>
                                 </div>
@@ -218,7 +222,7 @@
                                     <label class="login2 pull-left pull-left-pro">Imagen</label>
                                 </div>
                                 <div class="col-lg-9">
-                                    <img id = "imagen">
+                                    <img id="imagen">
 
                                     </img>
                                 </div>
@@ -226,7 +230,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-success"><i class="fa fa-check"></i>&nbsp;
+                            Confirmar</button>
                     </div>
                 </div>
             </div>
@@ -366,56 +371,56 @@
     <script src="assets/js/main.js"></script>
 </body>
 <script>
-var userUid;
-var pp1 = document.getElementById('pp1');
-var pp2 = document.getElementById('pp2');
-var username = document.getElementById('username1');
-function checkUserStatus() {
-firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      //Si user es verdadero, significa que hay un usuario autenticado
-    var userId = user.uid;
-    userUid = userId;
-    user.getIdTokenResult().then(idTokenResult => {
-        user.normal = idTokenResult.claims.normal;
-        //user.administrador = idTokenResult.claims.pyme;
+    var userUid;
+    var pp1 = document.getElementById('pp1');
+    var pp2 = document.getElementById('pp2');
+    var username = document.getElementById('username1');
+    function checkUserStatus() {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                //Si user es verdadero, significa que hay un usuario autenticado
+                var userId = user.uid;
+                userUid = userId;
+                user.getIdTokenResult().then(idTokenResult => {
+                    user.normal = idTokenResult.claims.normal;
+                    //user.administrador = idTokenResult.claims.pyme;
 
-        if(user.normal){
-            location.href = "user_profile.html";
-        }
-        //else if(user.administrador){
-          //location.href = "pyme-solicitudes.html";
-        //}
-      });
-    } else {
-      // User is signed out.
+                    if (user.normal) {
+                        location.href = "user_profile.html";
+                    }
+                    //else if(user.administrador){
+                    //location.href = "pyme-solicitudes.html";
+                    //}
+                });
+            } else {
+                // User is signed out.
 
+
+            }
+        });
+    }
+
+    function displayUserData() {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                //Si user es verdadero, significa que hay un usuario autenticado
+                var userId = user.uid;
+                userUid = userId;
+                db.collection('users').doc(userId).get().then(doc => {
+                    pp1.src = doc.data().profilePicURL;
+                    pp2.src = doc.data().profilePicURL;
+                    username.innerText = doc.data().username;
+                })
+            } else {
+                // User is signed out.
+
+
+            }
+        });
+        console.log(userUid);
 
     }
-  });
-}
-
-function displayUserData() {
-  firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        //Si user es verdadero, significa que hay un usuario autenticado
-      var userId = user.uid;
-      userUid = userId;
-        db.collection('users').doc(userId).get().then(doc => {
-            pp1.src = doc.data().profilePicURL;
-            pp2.src = doc.data().profilePicURL;
-            username.innerText = doc.data().username;
-        })
-      } else {
-        // User is signed out.
-
-
-      }
-    });
-  console.log(userUid);
-
-}
-window.onload = displayUserData();
+    window.onload = displayUserData();
 </script>
 
 </html>

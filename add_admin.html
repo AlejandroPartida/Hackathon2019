@@ -1,0 +1,352 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Inicio | </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!-- favicon
+        ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <!-- adminpro icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="assets/css/adminpro-custon-icon.css">
+    <!-- meanmenu icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+    <!-- mCustomScrollbar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+    <!-- animate CSS
+        ============================================ -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- normalize CSS
+        ============================================ -->
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <!-- style CSS
+        ============================================ -->
+    <link rel="stylesheet" href="assets/css/form.css">
+    <!-- style CSS
+        ============================================ -->
+    <link rel="stylesheet" href="assets/css/style2.css">
+    <!-- responsive CSS
+        ============================================ -->
+    <link rel="stylesheet" href="assets/css/responsive2.css">
+    <!-- modernizr JS
+        ============================================ -->
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Header top area start-->
+    <div class="wrapper-pro">
+        <div class="left-sidebar-pro">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <a href="#"><img src="assets/img/message/1.jpg" alt="" />
+                    </a>
+                    <h3>Nombre de usuario</h3>
+                </div>
+                <div class="left-custom-menu-adp-wrap">
+                    <ul class="nav navbar-nav left-sidebar-menu-pro">
+                        <li class="nav-item"><a href="admin_profile.html" class="nav-link"><i
+                                    class="fa fa-globe"></i>&nbsp;Mapa de la ciudad</a></li>
+                        <li class="nav-item"><a href="madelist.html" class="nav-link"><i
+                                    class="fa fa-check-square-o"></i>&nbsp;Quejas atendidas</a></li>
+                        <li class="nav-item"><a href="processlist.html" class="nav-link"><i
+                                    class="fa fa-hourglass-end"></i>&nbsp;Quejas en proceso</a></li>
+                        <li class="nav-item"><a href="pendinglist.html" class="nav-link"><i
+                                    class="fa fa-exclamation-triangle"></i>&nbsp;Quejas pendientes</a></li>
+                        <li class="nav-item"><a href="statistics.html" class="nav-link"><i
+                                    class="fa fa-line-chart"></i>&nbsp;Estadísticas</a>
+                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-sign-out"></i>&nbsp;Cerrar
+                                Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- Header top area end-->
+
+        <!-- Mobile Menu start -->
+        <div class="mobile-menu-area" style="background: #fff;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="mobile-menu">
+                            <nav id="dropdown">
+                                <ul class="mobile-menu-nav">
+                                    <li class="nav-item"><a href="admin_profile.html" class="nav-link"><i
+                                                class="fa fa-globe"></i>&nbsp;Mapa de la ciudad</a></li>
+                                    <li class="nav-item"><a href="madelist.html" class="nav-link"><i
+                                                class="fa fa-check-square-o"></i>&nbsp;Quejas atendidas</a></li>
+                                    <li class="nav-item"><a href="processlist.html" class="nav-link"><i
+                                                class="fa fa-hourglass-end"></i>&nbsp;Quejas en proceso</a></li>
+                                    <li class="nav-item"><a href="pendinglist.html" class="nav-link"><i
+                                                class="fa fa-exclamation-triangle"></i>&nbsp;Quejas pendientes</a>
+                                    </li>
+                                    <li class="nav-item"><a href="statistics.html" class="nav-link"><i
+                                                class="fa fa-line-chart"></i>&nbsp;Estadísticas</a>
+                                    </li>
+                                    <li class="nav-item"><a href="#" class="nav-link"><i
+                                                class="fa fa-sign-out"></i>&nbsp;Cerrar Sesión</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu end -->
+        <!-- Index start -->
+        <div class="content-inner-all">
+            <div class="login-form-area">
+                <div class="container-fluid">
+                    <div class=" mg-t-30 mg-b-40">
+                        <div class="col-lg-1"></div>
+                        <form id="">
+                            <div class="col-lg-10">
+                                <div class="login-bg">
+                                    <div class="contact-client-img contact-img-v2">
+                                        <h1><a class="contact-client-name" href="#">CONTROL DE MODERADORES</a></h1>
+                                        <d iv class="text-right mb-3">
+                                            <button type="button" onclick="clearModalInputs()"
+                                                class="btn btn-custon-four btn-primary" data-toggle="modal"
+                                                data-target="#modaladd"><i class="fa fa-plus-circle"></i>&nbsp;Agregar
+                                                moderador</button>
+
+                                    </div>
+                                    <div>
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Nombre de usuario</th>
+                                                    <th scope="col">Nombre completo</th>
+                                                    <th scope="col"></th>
+                                                    <th scope="col"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="list">
+                                                   
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                        <div class="col-lg-4"></div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div>
+            <div class="modal fade" id="modaladd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLongTitle">AGREGAR MODERADOR</h4>
+
+                        </div>
+                        <div class="modal-body">
+                                <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="login-input-head">
+                                                <p>Nombre completo </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="login-input-area">
+                                                <input type="text" id="name" />
+                                                <i class="fa fa-user login-user"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="login-input-head">
+                                                <p>Nombre de usuario </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="login-input-area">
+                                                <input type="text" id="username" />
+                                                <i class="fa fa-user login-user"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="login-input-head">
+                                                <p>Correo electrónico</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="login-input-area">
+                                                <input type="email" id="email" />
+                                                <i class="fa fa-envelope login-user" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="login-input-head">
+                                                <p>Número de teléfono</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="login-input-area">
+                                                <input type="number" id="number" />
+                                                <i class="fa fa-phone login-user" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="login-input-head">
+                                                <p>Contraseña</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="login-input-area">
+                                                <input type="password" id="password" />
+                                                <i class="fa fa-lock login-user"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="login-input-head">
+                                                <p>Confirmar contraseña</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="login-input-area">
+                                                <input type="password" id="confirm_password" />
+                                                <i class="fa fa-lock login-user"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="login-input-head">
+                                                <p>Género</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="login-input-area form-select-list">
+                                                <select id='gender' class="form-control custom-select-value"
+                                                    style="margin-top: 3%;">
+                                                    <option value="Mujer">Femenino</option>
+                                                    <option value="Hombre">Masculino</option>
+                                                    <option value="None">Prefiero no decirlo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="login-input-head">
+                                                <p>Dirección </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="login-input-area">
+                                                <input type="text" id="address" />
+                                                <i class="fa fa-home login-user"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="row">
+                                        <div class="col-lg-4"></div>
+                                        <div class="col-lg-8">
+                                            <div class="login-button-pro">
+                                                <button type="reset" id="cancel"
+                                                    class="login-button login-button-rg">Cancelar</button>
+                                                <button type="submit" id="register"
+                                                    class="login-button login-button-lg" onclick="registrar()">Registrarme</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Index end -->
+
+        <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+        <!-- Register End-->
+        <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-functions.js"></script>
+
+        <script src="assets/js/inicio.js" charset="utf-8"></script>
+
+        <script src="assets/js/auth.js"></script>
+        <script src="assets/js/add_admin.js"></script>
+        <!-- jquery
+        ============================================ -->
+        <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
+        <!-- bootstrap JS
+        ============================================ -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- meanmenu JS
+        ============================================ -->
+        <script src="assets/js/jquery.meanmenu.js"></script>
+        <!-- counterup JS
+		============================================ -->
+        <script src="assets/js/counterup/jquery.counterup.min.js"></script>
+        <script src="assets/js/counterup/waypoints.min.js"></script>
+        <script src="assets/js/counterup/counterup-active.js"></script>
+        <!-- mCustomScrollbar JS
+        ============================================ -->
+        <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <!-- sticky JS
+        ============================================ -->
+        <script src="assets/js/jquery.sticky.js"></script>
+        <!-- scrollUp JS
+        ============================================ -->
+        <script src="assets/js/jquery.scrollUp.min.js"></script>
+        <!-- form validate JS
+        ============================================ -->
+        <script src="assets/js/jquery.form.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/form-active.js"></script>
+        <!-- main JS
+        ============================================ -->
+        <script src="assets/js/main.js"></script>
+</body>
+
+</html>
