@@ -81,7 +81,8 @@ function addDenuncia() {
         descripcion: descripcion.value,
         estatus: 'Pendiente',
         numComprobaciones: 0,
-        pictureURL: downloadUrl
+        pictureURL: downloadUrl,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
 
     }).then(a => {
         Swal.fire({
