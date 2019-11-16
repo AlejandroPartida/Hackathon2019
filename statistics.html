@@ -79,6 +79,9 @@
                                     class="fa fa-hourglass-end"></i>&nbsp;Quejas en proceso</a></li>
                         <li class="nav-item"><a href="pendinglist.html" class="nav-link"><i
                                     class="fa fa-exclamation-triangle"></i>&nbsp;Quejas pendientes</a></li>
+                        <li class="nav-item"><a href="statistics.html" class="nav-link"><i
+                                    class="fa fa-line-chart"></i>&nbsp;Estadísticas</a>
+                        </li>
                         <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-sign-out"></i>&nbsp;Cerrar
                                 Sesión</a>
                         </li>
@@ -105,6 +108,9 @@
                                     <li class="nav-item"><a href="pendinglist.html" class="nav-link"><i
                                                 class="fa fa-exclamation-triangle"></i>&nbsp;Quejas pendientes</a>
                                     </li>
+                                    <li class="nav-item"><a href="statistics.html" class="nav-link"><i
+                                                class="fa fa-line-chart"></i>&nbsp;Estadísticas</a>
+                                    </li>
                                     <li class="nav-item"><a href="#" class="nav-link"><i
                                                 class="fa fa-sign-out"></i>&nbsp;Cerrar Sesión</a></li>
                                 </ul>
@@ -125,7 +131,7 @@
                             <div class="col-lg-10">
                                 <div class="login-bg">
                                     <div class="contact-client-img contact-img-v2">
-                                        <h1><a class="contact-client-name" href="#">GRÁFICOS</a></h1>
+                                        <h1><a class="contact-client-name" href="#">ESTADÍSTICAS</a></h1>
                                     </div>
                                     <div>
                                         <div class="row">
@@ -141,7 +147,7 @@
                                             <div class="col-sm-6">
                                                 <div class="card">
                                                     <div class="card-body">
-                                                            <h4>Número de reportes por tipo de queja</h4>
+                                                        <h4>Número de reportes por tipo de queja</h4>
 
                                                         <canvas id="myChart" style="height: 50%;"></canvas>
                                                     </div>
@@ -150,24 +156,25 @@
                                         </div>
                                         <br>
                                         <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                                <h4>Veracidad de reportes</h4>
+                                            <div class="col-sm-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h4>Veracidad de reportes</h4>
 
-                                                            <canvas id="myChart3" style="height: 50%;"></canvas>
-    
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <canvas id="myChart" style="height: 50%;"></canvas>
-                                                        </div>
+                                                        <canvas id="myChart3" style="height: 50%;"></canvas>
+
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="col-sm-6">
+                                                <div class="card">
+                                                    <div class="card-body" id="ranking">
+                                                        <h4>Ranking ciudadano</h4>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -192,7 +199,7 @@
     <script src="assets/js/inicio.js" charset="utf-8"></script>
 
     <script src="assets/js/auth.js"></script>
-    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/statistics.js"></script>
     <!-- jquery
         ============================================ -->
     <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>

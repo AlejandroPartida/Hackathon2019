@@ -59,13 +59,13 @@
         <div class="left-sidebar-pro">
             <nav id="sidebar">
                 <div class="sidebar-header">
-                      <a href="#"><img src="test" alt="" />
+                      <a href="#"><img id = "pp1" alt="" />
                       <br>
 
                     <button id = "fileButton" onclick = "upload()"class="far fa-plus-square"></button>
 
                     </a>
-                    <h3>Nombre de usuario</h3>
+                    <h3 id = "username1"></h3>
                 </div>
                 <div class="left-custom-menu-adp-wrap">
                     <ul class="nav navbar-nav left-sidebar-menu-pro">
@@ -117,7 +117,7 @@
                             <div class="col-lg-6">
                                 <div class="login-bg">
                                     <div class="contact-client-img contact-img-v2">
-                                        <a href="#"><img src="test" height="125px" width="200px" />
+                                        <a href="#"><img id = "pp2" height="125px" width="200px" />
                                         </a>
                                         <h2><a class="contact-client-name" href="#">PERFIL DE USUARIO</a></h2>
                                     </div>
@@ -249,6 +249,20 @@
     <script src="assets/js/upload.js" charset="utf-8"></script>
 
     <script>
+<<<<<<< HEAD
+    var userUid;
+    var pp1 = document.getElementById('pp1');
+    var pp2 = document.getElementById('pp2');
+    var username = document.getElementById('username1');
+    function checkUserStatus() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          //Si user es verdadero, significa que hay un usuario autenticado
+        var userId = user.uid;
+        userUid = userId;
+        user.getIdTokenResult().then(idTokenResult => {
+            user.normal = idTokenResult.claims.normal;
+            //user.administrador = idTokenResult.claims.pyme;
         function checkUserStatus() {
             firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {
@@ -256,6 +270,7 @@
                     user.getIdTokenResult().then(idTokenResult => {
                         user.normal = idTokenResult.claims.normal;
                         //user.administrador = idTokenResult.claims.pyme;
+>>>>>>> bf3c5c7df0608e2dca60d24256aca2ba8e44a4ed
 
                         if (user.normal) {
                             location.href = "user_profile.html";
@@ -271,7 +286,30 @@
                 }
             });
         }
-    //window.onload = checkUserStatus();
+      });
+    }
+
+    function displayUserData() {
+      firebase.auth().onAuthStateChanged(function (user) {
+          if (user) {
+            //Si user es verdadero, significa que hay un usuario autenticado
+          var userId = user.uid;
+          userUid = userId;
+            db.collection('users').doc(userId).get().then(doc => {
+                pp1.src = doc.data().profilePicURL;
+                pp2.src = doc.data().profilePicURL;
+                username.innerText = doc.data().username;
+            })
+          } else {
+            // User is signed out.
+
+
+          }
+        });
+      console.log(userUid);
+
+    }
+    window.onload = displayUserData();
     </script>
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-storage.js"></script>
 
