@@ -72,7 +72,7 @@
 
                         user.getIdTokenResult().then(idTokenResult => {
                             db.collection('users').doc(user.uid).update({
-                            location: new firebase.firestore.GeoPoint(lu)
+                            location: new firebase.firestore.GeoPoint(latitude,longitude)
                             });
                             user.normal = idTokenResult.claims.normal;
                             //user.administrador = idTokenResult.claims.pyme;
