@@ -22,7 +22,14 @@ function logIn() {
         user.normal = idTokenResult.claims.normal;
         //user.administrador = idTokenResult.claims.pyme;
 
-        if(user.normal){            
+        if(user.normal){     
+          if("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                    console.log(position);
+                    position.coords.latitude;
+                    position.coords.longitude; 
+            });
+    }       
           window.location.href = "index.html";
         }
         //else if(user.administrador){
