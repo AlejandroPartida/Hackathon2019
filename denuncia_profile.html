@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
     <!-- Bootstrap CSS
         ============================================ -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">add({
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- Bootstrap CSS
         ============================================ -->
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -90,9 +90,9 @@
         <div class="left-sidebar-pro">
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <a href="#"><img src="assets/img/message/1.jpg" alt="" />
+                    <a href="#"><img id = "pp1" alt="" />
                     </a>
-                    <h3>Nombre de usuario</h3>
+                    <h3 id = "username1"></h3>
                 </div>
                 <div class="left-custom-menu-adp-wrap">
                     <ul class="nav navbar-nav left-sidebar-menu-pro">
@@ -101,7 +101,7 @@
                         </li>
                         <li class="nav-item"><a href="denuncia_profile.html" class="nav-link"><i
                                     class="fa fa-exclamation-triangle"></i>&nbsp;Quejas</a></li>
-                        <li class="nav-item"><a href="index.html class="nav-link"><i class="fa fa-sign-out"></i>&nbsp;Cerrar
+                        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fa fa-sign-out"></i>&nbsp;Cerrar
                                 Sesión</a>
                         </li>
                     </ul>
@@ -379,6 +379,7 @@
         </div>
     </div>
     <!-- Index end -->
+
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
     <!-- Register End-->
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
@@ -423,5 +424,57 @@
         ============================================ -->
     <script src="assets/js/main.js"></script>
 </body>
+<script>
+var userUid;
+var pp1 = document.getElementById('pp1');
+var pp2 = document.getElementById('pp2');
+var username = document.getElementById('username1');
+function checkUserStatus() {
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      //Si user es verdadero, significa que hay un usuario autenticado
+    var userId = user.uid;
+    userUid = userId;
+    user.getIdTokenResult().then(idTokenResult => {
+        user.normal = idTokenResult.claims.normal;
+        //user.administrador = idTokenResult.claims.pyme;
+
+        if(user.normal){
+            location.href = "user_profile.html";
+        }
+        //else if(user.administrador){
+          //location.href = "pyme-solicitudes.html";
+        //}
+      });
+    } else {
+      // User is signed out.
+
+
+    }
+  });
+}
+
+function displayUserData() {
+  firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        //Si user es verdadero, significa que hay un usuario autenticado
+      var userId = user.uid;
+      userUid = userId;
+        db.collection('users').doc(userId).get().then(doc => {
+            pp1.src = doc.data().profilePicURL;
+            pp2.src = doc.data().profilePicURL;
+            username.innerText = doc.data().username;
+        })
+      } else {
+        // User is signed out.
+
+
+      }
+    });
+  console.log(userUid);
+
+}
+window.onload = displayUserData();
+</script>
 
 </html>
