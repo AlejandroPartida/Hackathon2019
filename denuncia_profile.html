@@ -51,6 +51,34 @@
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
+    <script>
+     function geoFindMe() {
+  var output = document.getElementById("out");
+
+  if (!navigator.geolocation){
+    swal("Error","Tu navegador no es compatible con el servicio de localización","error");
+    return;
+  }
+
+  function success(position) {
+    latitude  = position.coords.latitude;
+    longitude = position.coords.longitude;
+    var lu=latitude+","+longitude;
+    document.getElementById('lugar').value=lu;
+
+  }
+  function error() {
+     swal("Error","Hubo un error al detectar tu ubicación","error");
+  };
+
+ 
+
+  navigator.geolocation.getCurrentPosition(success, error);
+     }
+
+    </script>
+
+
 </head>
 
 <body>
@@ -120,7 +148,7 @@
 
                                     </div>
                                     <div class="text-right mb-3">
-                                        <button type="button" onclick="clearModalInputs()"
+                                        <button type="button" onclick="geoFindMe();clearModalInputs()"
                                             class="btn btn-custon-four btn-primary" data-toggle="modal"
                                             data-target="#modaladd"><i class="fa fa-plus-circle"></i>&nbsp;Agregar
                                             queja</button>
@@ -310,7 +338,7 @@
                                     <label class="login2 pull-left pull-left-pro">Lugar</label>
                                 </div>
                                 <div class="col-lg-9">
-                                    <input type="text" id="lugar" class="form-control" />
+                                    <input type="text" id="lugar" name="lugar" class="form-control" />
                                 </div>
                             </div>
                         </div>
