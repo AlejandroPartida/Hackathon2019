@@ -5,14 +5,12 @@
  * @param  {H.Map} map      A HERE Map instance within the application
  */
 var l,separador,limite;
-function addCircleToMap(map,l){
- var n=toString(l), separador = ",",
-   limite   = 2,
-    ar = n.split(separador, limite);
+function addCircleToMap(map,lat,long){
+ 
   map.addObject(new H.map.Circle(
 
     // The central point of the circle
-    {lat:ar[0], lng:ar[1]},
+    {lat:lat, lng:long},
     // The radius of the circle in meters
     100,
     {
@@ -60,9 +58,9 @@ var ui = H.ui.UI.createDefault(map, defaultLayers);
 
                     querySnapshot.forEach(doc => {
                         var date = doc.data().createdAt.toDate();
-                        console.log(date);
+                        console.log(doc.data().lugar);
                         var l= doc.data().lugar;
 
-                        addCircleToMap(map,l);
+                        addCircleToMap(map,l._lat, l._long);
 })
 });

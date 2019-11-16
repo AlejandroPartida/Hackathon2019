@@ -1,9 +1,9 @@
 var downloadUrl;
 
 const quejas = document.getElementById('quejas');
-const tipo = document.getElementById('tipo');
+const tipo = document.getElementById('tipo1');
 const lugar = document.getElementById('lugar');
-const descripcion = document.getElementById('descripcion');
+const descripcion = document.getElementById('descripcion1');
 const imagen = document.getElementById('imagen');
 const hacerDenuncia = document.getElementById('denuncia');
 var latitude;
@@ -91,9 +91,9 @@ function addDenuncia() {
     console.log(descripcion.value
         );
 
-    db.collection('denuncias').doc(userUid).set({
+    db.collection('denuncias').add({
         sentBy: userUid,
-        tipoReporte: tipoReporte.value,
+        tipoReporte: tipo.value,
         lugar: new firebase.firestore.GeoPoint(getLat(),getLong()),
         descripcion: descripcion.value,
         estatus: 'Pendiente',
