@@ -4,23 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-<<<<<<< HEAD
     <title>Inicio | </title>
-=======
-    <title>En proceso | A LA MIRA </title>
->>>>>>> 1cfa34054353ffaf81802c9525d777ad88390259
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+
     <!-- favicon
         ============================================ -->
-<<<<<<< HEAD
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-=======
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo_alamira2.png">
->>>>>>> 1cfa34054353ffaf81802c9525d777ad88390259
     <!-- Google Fonts
         ============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
@@ -58,6 +51,8 @@
         ============================================ -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
 
 </head>
 
@@ -130,41 +125,49 @@
                             <div class="col-lg-10">
                                 <div class="login-bg">
                                     <div class="contact-client-img contact-img-v2">
-                                        <h1><a class="contact-client-name" href="#">QUEJAS EN PROCESO</a></h1>
-
+                                        <h1><a class="contact-client-name" href="#">GRÁFICOS</a></h1>
                                     </div>
-                                    <div class="form-group-inner">
+                                    <div>
                                         <div class="row">
-                                            <div class="col-lg-3">
-                                                <label class="login2 pull-left pull-left-pro">Tipo de reporte:</label>
+                                            <div class="col-sm-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h4>Estado de reportes</h4>
+                                                        <canvas id="myChart2" style="height: 50%;"></canvas>
+
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-lg-9">
-                                                <div class="form-select-list">
-                                                    <select class="form-control custom-select-value" id="tipoQueja" onchange="filtrarQuejasPorTipo(this.value)">
-                                                        <option value="0">Seleccionar...</option>
-                                                        <option value="Transporte público">Transporte público</option>
-                                                        <option value="Luz">Luz</option>
-                                                        <option value="Agua">Agua</option>
-                                                        <option value="Baches">Baches</option>
-                                                        <option value="Basura">Basura</option>
-                                                        <option value="Maltrato animal">Maltrato animal</option>
-                                                        <option value="Alteración del orden público">Alteración del
-                                                            orden público
-                                                        </option>
-                                                        <option value="Violencia intrafamiliar">Violencia intrafamiliar
-                                                        </option>
-                                                        <option value="Personas en situación de calle">Personas en
-                                                            situación de
-                                                            calle</option>
-                                                    </select>
+                                            <div class="col-sm-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                            <h4>Número de reportes por tipo de queja</h4>
+
+                                                        <canvas id="myChart" style="height: 50%;"></canvas>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <div class="row" id="quejas">
-                                            
-                                        </div>
+                                        <br>
+                                        <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                                <h4>Veracidad de reportes</h4>
+
+                                                            <canvas id="myChart3" style="height: 50%;"></canvas>
+    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <canvas id="myChart" style="height: 50%;"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                             </div>
@@ -174,75 +177,10 @@
                 </div>
             </div>
 
-        </div>
-        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-
-                        <h4 class="modal-title" id="exampleModalLongTitle">REPORTE</h4>
-
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group-inner">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <label class="login2 pull-left pull-left-pro">Tipo de reporte</label>
-                                </div>
-                                <div class="col-lg-9">
-                                    <div class="form-select-list">
-                                        <input type="text" class="form-control" id="tipo" disabled />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group-inner">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <label class="login2 pull-left pull-left-pro">Lugar</label>
-                                </div>
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="lugar" disabled />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group-inner">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <label class="login2 pull-left pull-left-pro">Descripción</label>
-                                </div>
-                                <div class="col-lg-9">
-                                    <textarea class="form-control" id="descripcion" disabled>
-
-                                        </textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group-inner">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <label class="login2 pull-left pull-left-pro">Imagen</label>
-                                </div>
-                                <div class="col-lg-9">
-                                    <img id="imagen">
-
-                                    </img>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer" id="botonesModal">
-                        
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+        </div>>
     </div>
     <!-- Index end -->
+
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
     <!-- Register End-->
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
@@ -254,7 +192,7 @@
     <script src="assets/js/inicio.js" charset="utf-8"></script>
 
     <script src="assets/js/auth.js"></script>
-    <script src="assets/js/processlist.js"></script>
+    <script src="assets/js/charts.js"></script>
     <!-- jquery
         ============================================ -->
     <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
