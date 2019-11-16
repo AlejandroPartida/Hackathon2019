@@ -209,7 +209,6 @@ function clearModalInputs1() {
 }
 
 function setValuesOnModalInputs(documentId, tipoReporte, lugarR, descR, imgURL){
-    console.log(tipoReporte);
     
     clearModalInputs1();
     tipo.value = tipoReporte;
@@ -225,8 +224,15 @@ function setVeracity(veracity, docId) {
     db.collection('denuncias').doc(docId).update({
         veracidad: veracity
     }).then(() => {
+        var v;
+        if(veracity) {
+            v = "verdadera";
+        }else {
+            v = "falsa";
+        }
         Swal.fire({
             title: '¡Queja verificada!',
+            text: '¡Gracias por ayudar a la comunidad! Catalogaste esta queja como ' + v,
             type: 'success'
         })
     })
@@ -236,6 +242,31 @@ function updateStatus(documentId) {
     db.collection('denuncias').doc(documentId).update({
         estatus: 'Finalizada'
     }).then(() => {
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success',
+              cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          })
+          
+          swalWithBootstrapButtons.fire({
+            title: 'Confirma la veracidad de la queja',
+            text: "¿Confirmas que la queja fue real?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Verdadera.',
+            cancelButtonText: 'Falsa.',
+            reverseButtons: false
+          }).then((result) => {
+            if (result.value) {
+                setVeracity(true, documentId);
+            } else if (
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              setVeracity(false, documentId);
+            }
+          })
     });
 }
 
