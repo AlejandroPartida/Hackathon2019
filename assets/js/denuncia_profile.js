@@ -6,6 +6,8 @@ const lugar = document.getElementById('lugar');
 const descripcion = document.getElementById('descripcion');
 const imagen = document.getElementById('imagen');
 const hacerDenuncia = document.getElementById('denuncia');
+var latitude;
+var longitude;
 
 
 var userUid;
@@ -72,7 +74,19 @@ function clearModalInputs() {
     document.getElementById('foto').disabled = false;
 
 }
-
+function setLat(lat){
+    latitude = lat;
+    
+}
+function setLong(long){
+    longitude = long
+}
+function getLat(){
+return latitude;
+}
+function getLong(){
+    return longitude;
+}
 function addDenuncia() {
     console.log(descripcion.value
         );
@@ -80,7 +94,7 @@ function addDenuncia() {
     db.collection('denuncias').doc(userUid).set({
         sentBy: userUid,
         tipoReporte: tipoReporte.value,
-        lugar: lugar.value,
+        lugar: new firebase.firestore.GeoPoint(getLat(),getLong()),
         descripcion: descripcion.value,
         estatus: 'Pendiente',
         numComprobaciones: 0,

@@ -65,6 +65,8 @@
                 longitude = position.coords.longitude;
                 var lu = latitude + "," + longitude;
                 document.getElementById('lugar').value = lu;
+                setLat(latitude);
+                setLong(longitude);
 
             }
             function error() {
