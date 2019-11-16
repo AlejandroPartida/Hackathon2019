@@ -83,12 +83,7 @@ function addDenuncia() {
         numComprobaciones: 0,
         pictureURL: downloadUrl,
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
-<<<<<<< HEAD
       }).then(a => {
-=======
-
-    }).then(a => {
->>>>>>> 1cfa34054353ffaf81802c9525d777ad88390259
         Swal.fire({
             type: 'success',
             title: 'Denuncia publicada.',

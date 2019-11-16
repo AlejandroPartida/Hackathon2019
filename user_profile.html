@@ -250,7 +250,6 @@
 
     <script>
 <<<<<<< HEAD
-<<<<<<< HEAD
     var userUid;
     var pp1 = document.getElementById('pp1');
     var pp2 = document.getElementById('pp2');
@@ -264,9 +263,6 @@
         user.getIdTokenResult().then(idTokenResult => {
             user.normal = idTokenResult.claims.normal;
             //user.administrador = idTokenResult.claims.pyme;
-=======
-=======
->>>>>>> 1cfa34054353ffaf81802c9525d777ad88390259
         function checkUserStatus() {
             firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {
@@ -290,7 +286,6 @@
                 }
             });
         }
-<<<<<<< HEAD
       });
     }
 
@@ -315,9 +310,6 @@
 
     }
     window.onload = displayUserData();
-=======
-    //window.onload = checkUserStatus();
->>>>>>> bf3c5c7df0608e2dca60d24256aca2ba8e44a4ed
     </script>
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-storage.js"></script>
 
