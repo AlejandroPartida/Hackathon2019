@@ -20,7 +20,7 @@ function logIn() {
       //Si user es verdadero, significa que hay un usuario autenticado
     user.getIdTokenResult().then(idTokenResult => {
         user.normal = idTokenResult.claims.normal;
-        //user.administrador = idTokenResult.claims.pyme;
+        user.administrador = idTokenResult.claims.administrador;
 
         if(user.normal){     
           if("geolocation" in navigator) {
@@ -32,9 +32,9 @@ function logIn() {
     }       
           window.location.href = "index.html";
         }
-        //else if(user.administrador){
-          //location.href = "pyme-solicitudes.html";
-        //}
+        else if(user.administrador){
+          location.href = "pendinglist.html";
+        }
       });    
     } else {
       // User is signed out.
