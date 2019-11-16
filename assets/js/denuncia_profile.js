@@ -13,7 +13,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         userUid = userId;
     } else {
         // No user is signed in.
-        
+
     }
 });
 
@@ -48,7 +48,7 @@ async function fotoDenuncia() {
                 document.getElementById('foto').disabled = true;
                 fileChild.getDownloadURL().then(function (url) {
                      downloadUrl = url.toString();
-                    
+
                 })
             });
 
@@ -67,23 +67,23 @@ function clearModalInputs() {
     document.getElementById('lugar').value = "";
     document.getElementById('descripcion').value = "";
     document.getElementById('foto').disabled = false;
-    
+
 }
 
 function addDenuncia() {
-    console.log(descripcion.value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+    console.log(descripcion.value
         );
-    
-    db.collection('denuncias').add({
+
+    db.collection('denuncias').doc(userUid).set({
         sentBy: userUid,
         tipoReporte: tipoReporte.value,
         lugar: lugar.value,
         descripcion: descripcion.value,
         estatus: 'Pendiente',
         numComprobaciones: 0,
-        pictureURL: downloadUrl
-
-    }).then(a => {
+        pictureURL: downloadUrl,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      }).then(a => {
         Swal.fire({
             type: 'success',
             title: 'Denuncia publicada.',
@@ -92,5 +92,5 @@ function addDenuncia() {
     });
 
     hacerDenuncia.setAttribute('data-dismiss', 'modal');
-   
+
 }
