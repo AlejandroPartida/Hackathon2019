@@ -46,6 +46,18 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+
+    <link rel="stylesheet" type="text/css" href="assets/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/template1.css" />
+    <script type="text/javascript" src='assets/js/test-credentials.js'></script> 
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+   
+
+
 </head>
 
 <body>
@@ -57,9 +69,9 @@
         <div class="left-sidebar-pro">
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <a href="#"><img id = "pp1" alt="" />
+                    <a href="#"><img src="assets/img/message/1.jpg" alt="" />
                     </a>
-                    <h3 id = "username1"></h3>
+                    <h3>Nombre de usuario</h3>
                 </div>
                 <div class="left-custom-menu-adp-wrap">
                     <ul class="nav navbar-nav left-sidebar-menu-pro">
@@ -127,7 +139,7 @@
                                         <h2><a class="contact-client-name" href="#">MAPA DE LA CIUDAD</a></h2>
                                     </div>
                                     <div class="contact-client-address">
-
+                                    <div id="map"></div>
                                     </div>
                                 </div>
                                 <br><br>
@@ -143,19 +155,19 @@
     </div>
     <!-- Index end -->
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
-    <!-- Register End-->
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-functions.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+
 
     <!-- jquery
         ============================================ -->
     <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
     <!-- bootstrap JS
         ============================================ -->
-    <script src="assets/js/bootstrap.min.js"></script>
+
     <!-- meanmenu JS
         ============================================ -->
     <script src="assets/js/jquery.meanmenu.js"></script>
@@ -181,6 +193,9 @@
     <!-- main JS
         ============================================ -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/inicio.js"></script>
+    <script src="assets/js/demo.js"></script>
+
     <script>
     var userUid;
     var pp1 = document.getElementById('pp1');
